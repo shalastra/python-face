@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+people
+
+model.pkl
+
+fisherfaces.png
