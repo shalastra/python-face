@@ -63,13 +63,12 @@ if __name__ == "__main__":
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
 
-    # Define the Fisherfaces as Feature Extraction method:
     feature = Fisherfaces()
-    # Define a 1-NN classifier with Euclidean Distance:
+
     classifier = NearestNeighbor(dist_metric=EuclideanDistance(), k=1)
-    # Define the model as the combination
+
     my_model = PredictableModel(feature=feature, classifier=classifier)
-    # Compute the Fisherfaces on the given data (in X) and labels (in y):
+
     my_model.compute(X, y)
-    # We then save the model, which uses Pythons pickle module:
+
     save_model('model.pkl', my_model)
